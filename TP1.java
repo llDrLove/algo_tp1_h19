@@ -13,11 +13,12 @@ public class TP1 {
 		if (algo.equals("counting")) {
 			currentAlgo = new CountingAlgo();
 		} else if (algo.equals("quick")) {
-			System.out.println("Handle the quick");
+			currentAlgo = new QuickAlgo(0, 1);
 		} else if (algo.equals("quickSeuil")) {
-			System.out.println("Handle the quickSeuil");
+			currentAlgo = new QuickAlgo(0, 30);
 		} else if (algo.equals("quickRandomSeuil")) {
-			System.out.println("Handle the quickRandomSeuil");
+			int rand = (int)(Math.random() * numbers.size());
+			currentAlgo = new QuickAlgo(rand, 30);
 		} else {
 			System.out.println("Whoops! You did not provided a good algorithm.");
 			return;
