@@ -77,13 +77,18 @@ public class QuickAlgo implements AlgoInterface {
     }
 
     public void replacteElem(ArrayList<Integer> elements, int beg, int end){
-        ArrayList<Integer> tempList = new ArrayList<Integer>(elements.subList(beg, end));
-        Collections.sort(tempList);
-        int counter = 0;
-        for(int i = beg; i < end; i++){
-            elements.set(i, tempList.get(counter));
-            counter++;
-        }
+        for (int i = beg; i < end; i++) 
+        { 
+            int key = elements.get(i); 
+            int j = i - 1; 
+  
+            while (j >= 0 && elements.get(j) > key) 
+            { 
+                elements.set((j + 1), elements.get(j));
+                j = j-1; 
+            } 
+            elements.set((j + 1), key);
+        } 
     }
 
 }

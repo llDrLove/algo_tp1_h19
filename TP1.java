@@ -18,7 +18,7 @@ public class TP1 {
 			currentAlgo = new QuickAlgo(0, 30);
 		} else if (algo.equals("quickRandomSeuil")) {
 			int rand = (int)(Math.random() * numbers.size());
-			currentAlgo = new QuickAlgo(rand, 30);
+			currentAlgo = new QuickAlgo(rand, 25);
 		} else {
 			System.out.println("Whoops! You did not provided a good algorithm.");
 			return;
