@@ -32,7 +32,7 @@ public class TP1 {
 			if (args[4].equals("-p")) {
 				printArray(result);
 			} else if (args[4].equals("-t")) {
-				System.out.println(path + "," + (end - start));
+				System.out.println(path + "," + (result.size() > 0 ? (end - start) : 0) );
 				//System.out.println("The time took : " + (end - start) + " ms");
 			}
 		}
