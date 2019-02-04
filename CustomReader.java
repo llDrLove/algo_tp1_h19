@@ -30,7 +30,6 @@ public class CustomReader {
 			System.out.println("Error reading the file : " + this.path);
 			e.printStackTrace();
 		} catch (Exception e) {
-			System.out.println("Exiting...");
 			return new ArrayList<Integer>();
 		}
 		

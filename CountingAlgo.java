@@ -16,7 +16,6 @@ public class CountingAlgo implements AlgoInterface {
 		// set tab for counting each index
 		ArrayList<Integer> planningTab = new ArrayList<Integer>();
 		if (max > 500000000) {
-			System.out.println("Exiting the max heap space");
 			return new ArrayList<Integer>();
 		}
 		for(int i = 0; i <= max; i++){
