@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 //source : https://gist.github.com/aaani/6337280
-public class QuickAlgo implements AlgoInterface {
+public class QuickAlgo {
 
     private int pivot;
     private int threshold;
@@ -12,19 +12,19 @@ public class QuickAlgo implements AlgoInterface {
         this. threshold = threshold;
     }
 
-	public ArrayList<Integer> handle(ArrayList<Integer> numbers) {
+	public ArrayList<Long> handle(ArrayList<Long> numbers) {
         quicksort(numbers,0, numbers.size()-1);
         return numbers;
 	}
 
-    public void swap(ArrayList<Integer> elements, int i, int j){
+    public void swap(ArrayList<Long> elements, int i, int j){
         //Method to swap 2 elements in an arraylist
-        int temp= elements.get(i);
+        Long temp= elements.get(i);
         elements.set(i, elements.get(j));
         elements.set(j, temp);
     }
     
-    public int partition(ArrayList<Integer> elements, int beg, int end){
+    public int partition(ArrayList<Long> elements, int beg, int end){
         
         //Get a fonctionnal pivot
         int myPivot;
@@ -56,7 +56,7 @@ public class QuickAlgo implements AlgoInterface {
         return beg;
     }
     
-    public void quicksort(ArrayList<Integer> elements, int beg, int end){
+    public void quicksort(ArrayList<Long> elements, int beg, int end){
         if(beg >= end || beg < 0 || end > elements.size() - 1) return;
         
         int oldPivot = partition(elements, beg, end);
@@ -64,30 +64,30 @@ public class QuickAlgo implements AlgoInterface {
             quicksort(elements, beg, oldPivot-1);
         }
         else if(oldPivot - beg > 1){
-            replacteElem(elements, beg, oldPivot-1);
+            replaceElem(elements, beg, oldPivot-1);
         }
         if(end - oldPivot + 1 >= threshold){
             quicksort(elements, oldPivot+1, end);
         }
         else if(end - oldPivot > 1){
-            replacteElem(elements, oldPivot+1, end);
+            replaceElem(elements, oldPivot+1, end);
         }
-        //quicksort(elements, beg, oldPivot-1);
-        //quicksort(elements, oldPivot+1, end);
     }
 
-    public void replacteElem(ArrayList<Integer> elements, int beg, int end){
-        for (int i = beg; i < end; i++) 
+    //source : https://www.geeksforgeeks.org/insertion-sort/
+    public void replaceElem(ArrayList<Long> elements, int beg, int end){
+        System.out.println(elements.subList(beg, end));
+        for (int i=beg+1; i<end; ++i) 
         { 
-            int key = elements.get(i); 
-            int j = i - 1; 
-  
-            while (j >= 0 && elements.get(j) > key) 
+            long key = elements.get(i); 
+            int j = i-1; 
+
+            while (j>=beg && elements.get(j) > key) 
             { 
-                elements.set((j + 1), elements.get(j));
+                elements.set((j+1), elements.get(j));
                 j = j-1; 
             } 
-            elements.set((j + 1), key);
+            elements.set((j+1), key);
         } 
     }
 
