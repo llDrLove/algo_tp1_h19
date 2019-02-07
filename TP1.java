@@ -31,13 +31,13 @@ public class TP1 {
 			resultQuick = currentAlgoQuick.handle(numbersQuick);
 			end = System.currentTimeMillis();
 		} else if (algo.equals("quickSeuil")) {
-			currentAlgoQuick = new QuickAlgo(0, 35);
+			currentAlgoQuick = new QuickAlgo(0, 20);
 			start = System.currentTimeMillis();
 			resultQuick = currentAlgoQuick.handle(numbersQuick);
 			end = System.currentTimeMillis();
 		} else if (algo.equals("quickRandomSeuil")) {
 			int rand = (int)(Math.random() * numbersQuick.size());
-			currentAlgoQuick = new QuickAlgo(rand, 35);
+			currentAlgoQuick = new QuickAlgo(rand, 20);
 			start = System.currentTimeMillis();
 			resultQuick = currentAlgoQuick.handle(numbersQuick);
 			end = System.currentTimeMillis();
