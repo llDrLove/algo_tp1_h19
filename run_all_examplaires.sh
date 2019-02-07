@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for algo in counting quick quickSeuil quickRandomSeuil
+for algo in quick quickSeuil quickRandomSeuil
 do
         for test in $(ls ./exemplaires)
         do
