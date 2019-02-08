@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.sun.glass.ui.SystemClipboard;
-
 //source : https://gist.github.com/aaani/6337280
 // et https://www.techiedelight.com/hybrid-quicksort/?fbclid=IwAR05cm3-l9aOPoolxpFuyCnM2KRwvnG21wey4bmMy1Ey2INABHfmshPsQfQ
 public class QuickAlgo {
