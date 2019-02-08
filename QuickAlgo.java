@@ -11,6 +11,7 @@ public class QuickAlgo {
     private int threshold;
 
     QuickAlgo (int pivot, int threshold){
+        // set pivot and threshold
         this.pivot = pivot;
         this. threshold = threshold;
     }
@@ -60,24 +61,27 @@ public class QuickAlgo {
         if(beg >= end || beg < 0 || end > elements.size() - 1) return;
         
         int oldPivot = partition(elements, beg, end);
-        //quicksort(elements, beg, oldPivot-1);
-        //quicksort(elements, oldPivot+1, end);
+
+        //first half
         if(oldPivot - beg + 1 >= threshold){
             quicksort(elements, beg, oldPivot-1);
         }
-        else if(oldPivot - beg > 1){
+        else if(oldPivot - beg > 1){ // if this part of the list is smaller than the threshold
             replaceElem(elements, beg, oldPivot-1);
         }
+
+        //second half
         if(end - oldPivot + 1 >= threshold){
             quicksort(elements, oldPivot+1, end);
         }
-        else if(end - oldPivot > 1){
+        else if(end - oldPivot > 1){ // if this part of the list is smaller than the threshold
             replaceElem(elements, oldPivot+1, end);
         }
     }
 
     //source : https://www.geeksforgeeks.org/insertion-sort/
     public void replaceElem(ArrayList<Long> numbers, int beg, int end){
+        // insertion sort
         for (int i = beg + 1; i <= end; i++)
 		{
 			long value = numbers.get(i);

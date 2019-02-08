@@ -13,11 +13,12 @@ public class CountingAlgo implements AlgoInterface {
 			}
 		}
 		
-		// set tab for counting each index
 		ArrayList<Integer> planningTab = new ArrayList<Integer>();
+		// make sure that the array is not too long. (testé dans les locaux de lab)
 		if (max > 500000000) {
 			return new ArrayList<Integer>();
 		}
+		// set tab for counting each index
 		for(int i = 0; i <= max; i++){
 			planningTab.add(0);
 		}
